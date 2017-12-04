@@ -1,6 +1,7 @@
 #!/opt/omni/bin/node
 
 var moment = require('moment-timezone'),
+    fs = require('fs'),
     https = require('https'),
     stop_after_one = true;
 
@@ -14,7 +15,7 @@ if(!config.station) {
   process.exit(1);
 }
 
-var trap_uuid = config.trapuuid,
+var trap_uuid = config.httptrap,
     trap_secret = config.secret,
     time_zone = config.timezone,
     station = config.station,
